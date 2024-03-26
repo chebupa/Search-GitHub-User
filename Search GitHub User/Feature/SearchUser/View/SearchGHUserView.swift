@@ -8,11 +8,38 @@
 import SwiftUI
 
 struct SearchGHUserView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+	
+	@State private var viewModel = SearchGHUserViewModel()
+	
+	var body: some View {
+		NavigationStack {
+			ScrollView {
+				SearchAccountView(user: $viewModel.user,
+								  webIsPresented: $viewModel.webIsPresented)
+			}
+			.navigationTitle("Search")
+			.searchable(text: $viewModel.searchedUser)
+			.onSubmit(of: .search) {
+				Task {
+					do {
+						viewModel.searchedUser = try await viewModel.searchUser().login
+					} catch {
+						viewModel.alertIsShown = true
+					}
+				}
+			}
+			.sheet(isPresented: $viewModel.webIsPresented) {
+				WebView(url: viewModel.webViewURL)
+					.presentationDragIndicator(.visible)
+			}
+			.alert("Such user doesn't exist",
+				   isPresented: $viewModel.alertIsShown) {
+				Button("OK", role: .cancel) { }
+			}
+		}
+	}
 }
 
 #Preview {
-    SearchGHUserView()
+	SearchGHUserView()
 }

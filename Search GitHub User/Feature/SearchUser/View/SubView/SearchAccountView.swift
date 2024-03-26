@@ -10,7 +10,6 @@ import SwiftUI
 struct SearchAccountView: View {
 	
 	@Binding var user: GHUser?
-	@Binding var searchedUser: String
 	@Binding var webIsPresented: Bool
 	
 	@State private var feedback: Bool = false
@@ -18,7 +17,6 @@ struct SearchAccountView: View {
 	var body: some View {
 		
 		if user != nil {
-			
 			VStack {
 				AsyncImage(url: user?.avatarUrl) { image in
 					image
@@ -53,25 +51,22 @@ struct SearchAccountView: View {
 				.padding()
 			}
 			.frame(maxWidth: .infinity, maxHeight: .infinity)
-			.padding(.bottom, 100)
+			.padding(.top, 64)
 			.transition(.asymmetric(insertion: .scale, removal: .opacity))
 			.sensoryFeedback(.impact(flexibility: .soft),
 							 trigger: feedback)
 		}
 		
 		else {
-			
 			Text("No user was searched")
-			
 		}
 	}
 }
 
 #Preview {
 	SearchAccountView(user: .constant(GHUser(login: "asd",
-									   avatarUrl: URL(string: "https://example.com/")!,
-									   bio: "asd")),
-					  searchedUser: .constant("asd"),
+											 avatarUrl: URL(string: "https://example.com/")!,
+											 bio: "asd")),
 					  webIsPresented: .constant(false)
 	)
 }

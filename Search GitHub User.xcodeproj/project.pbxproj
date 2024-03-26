@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4631C5CC2BA4F01D00567C33 /* SearchGHUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4631C5CB2BA4F01D00567C33 /* SearchGHUserView.swift */; };
+		46233BB92BAC978A00AE458C /* SearchGHUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46233BB82BAC978A00AE458C /* SearchGHUserView.swift */; };
 		4631C5CE2BA4F02A00567C33 /* UserScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4631C5CD2BA4F02A00567C33 /* UserScreenView.swift */; };
 		4631C5D22BA6360C00567C33 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4631C5D12BA6360C00567C33 /* WebView.swift */; };
 		4631C5D92BA6EA8200567C33 /* GHUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4631C5D82BA6EA8200567C33 /* GHUserModel.swift */; };
 		4631C5DB2BA6EABB00567C33 /* SearchGHUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4631C5DA2BA6EABB00567C33 /* SearchGHUserViewModel.swift */; };
 		4631C5E42BA6F66900567C33 /* SearchAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4631C5E32BA6F66900567C33 /* SearchAccountView.swift */; };
 		4631C5E62BA6F87D00567C33 /* SearchFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4631C5E52BA6F87D00567C33 /* SearchFieldView.swift */; };
+		46930DA42BB3421D005FEC89 /* Documentation.docc in Sources */ = {isa = PBXBuildFile; fileRef = 46930DA32BB3421D005FEC89 /* Documentation.docc */; };
 		46DFB8132BA221E40032140D /* Search_GitHub_UserApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DFB8122BA221E40032140D /* Search_GitHub_UserApp.swift */; };
 		46DFB8172BA221E50032140D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46DFB8162BA221E50032140D /* Assets.xcassets */; };
 		46DFB81A2BA221E50032140D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46DFB8192BA221E50032140D /* Preview Assets.xcassets */; };
@@ -23,13 +24,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4631C5CB2BA4F01D00567C33 /* SearchGHUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchGHUserView.swift; sourceTree = "<group>"; };
+		46233BB82BAC978A00AE458C /* SearchGHUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchGHUserView.swift; sourceTree = "<group>"; };
 		4631C5CD2BA4F02A00567C33 /* UserScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserScreenView.swift; sourceTree = "<group>"; };
 		4631C5D12BA6360C00567C33 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		4631C5D82BA6EA8200567C33 /* GHUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHUserModel.swift; sourceTree = "<group>"; };
 		4631C5DA2BA6EABB00567C33 /* SearchGHUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchGHUserViewModel.swift; sourceTree = "<group>"; };
 		4631C5E32BA6F66900567C33 /* SearchAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAccountView.swift; sourceTree = "<group>"; };
 		4631C5E52BA6F87D00567C33 /* SearchFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFieldView.swift; sourceTree = "<group>"; };
+		46930DA32BB3421D005FEC89 /* Documentation.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Documentation.docc; sourceTree = "<group>"; };
 		46DFB80F2BA221E40032140D /* Search GitHub User.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Search GitHub User.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46DFB8122BA221E40032140D /* Search_GitHub_UserApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search_GitHub_UserApp.swift; sourceTree = "<group>"; };
 		46DFB8162BA221E50032140D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -50,98 +52,97 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4631C5D32BA6E5F500567C33 /* Features */ = {
+		4631C5D32BA6E5F500567C33 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
 				4631C5D42BA6E5FE00567C33 /* SearchUser */,
 				4631C5DC2BA6EAD000567C33 /* Account */,
 			);
-			path = Features;
+			path = Feature;
 			sourceTree = "<group>";
 		};
 		4631C5D42BA6E5FE00567C33 /* SearchUser */ = {
 			isa = PBXGroup;
 			children = (
-				4631C5D62BA6E63E00567C33 /* Views */,
-				4631C5D72BA6E64400567C33 /* ViewModels */,
-				4631C5D52BA6E63800567C33 /* Models */,
+				4631C5D62BA6E63E00567C33 /* View */,
+				4631C5D72BA6E64400567C33 /* ViewModel */,
+				4631C5D52BA6E63800567C33 /* Model */,
 			);
 			path = SearchUser;
 			sourceTree = "<group>";
 		};
-		4631C5D52BA6E63800567C33 /* Models */ = {
+		4631C5D52BA6E63800567C33 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				4631C5D82BA6EA8200567C33 /* GHUserModel.swift */,
 			);
-			path = Models;
+			path = Model;
 			sourceTree = "<group>";
 		};
-		4631C5D62BA6E63E00567C33 /* Views */ = {
+		4631C5D62BA6E63E00567C33 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4631C5E12BA6EE9C00567C33 /* SubViews */,
-				4631C5CB2BA4F01D00567C33 /* SearchGHUserView.swift */,
+				46233BB82BAC978A00AE458C /* SearchGHUserView.swift */,
+				4631C5E12BA6EE9C00567C33 /* SubView */,
 			);
-			path = Views;
+			path = View;
 			sourceTree = "<group>";
 		};
-		4631C5D72BA6E64400567C33 /* ViewModels */ = {
+		4631C5D72BA6E64400567C33 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				4631C5DA2BA6EABB00567C33 /* SearchGHUserViewModel.swift */,
 			);
-			path = ViewModels;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		4631C5DC2BA6EAD000567C33 /* Account */ = {
 			isa = PBXGroup;
 			children = (
-				4631C5DD2BA6EAE400567C33 /* Views */,
-				4631C5DF2BA6EAED00567C33 /* Models */,
-				4631C5DE2BA6EAE700567C33 /* ViewModels */,
+				4631C5DD2BA6EAE400567C33 /* View */,
+				4631C5DF2BA6EAED00567C33 /* Model */,
+				4631C5DE2BA6EAE700567C33 /* ViewModel */,
 			);
 			path = Account;
 			sourceTree = "<group>";
 		};
-		4631C5DD2BA6EAE400567C33 /* Views */ = {
+		4631C5DD2BA6EAE400567C33 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				4631C5CD2BA4F02A00567C33 /* UserScreenView.swift */,
 			);
-			path = Views;
+			path = View;
 			sourceTree = "<group>";
 		};
-		4631C5DE2BA6EAE700567C33 /* ViewModels */ = {
+		4631C5DE2BA6EAE700567C33 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = ViewModels;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		4631C5DF2BA6EAED00567C33 /* Models */ = {
+		4631C5DF2BA6EAED00567C33 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Models;
+			path = Model;
 			sourceTree = "<group>";
 		};
-		4631C5E02BA6EBBB00567C33 /* Services */ = {
+		4631C5E02BA6EBBB00567C33 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				46DFB8222BA222AD0032140D /* NetworkService.swift */,
 				46DFB8202BA2228A0032140D /* NetworkService */,
 			);
-			path = Services;
+			path = Service;
 			sourceTree = "<group>";
 		};
-		4631C5E12BA6EE9C00567C33 /* SubViews */ = {
+		4631C5E12BA6EE9C00567C33 /* SubView */ = {
 			isa = PBXGroup;
 			children = (
 				4631C5E32BA6F66900567C33 /* SearchAccountView.swift */,
 				4631C5E52BA6F87D00567C33 /* SearchFieldView.swift */,
 			);
-			path = SubViews;
+			path = SubView;
 			sourceTree = "<group>";
 		};
 		4631C5E22BA6F16900567C33 /* UI */ = {
@@ -155,6 +156,7 @@
 		46DFB8062BA221E40032140D = {
 			isa = PBXGroup;
 			children = (
+				46930DA32BB3421D005FEC89 /* Documentation.docc */,
 				46DFB8112BA221E40032140D /* Search GitHub User */,
 				46DFB8102BA221E40032140D /* Products */,
 			);
@@ -172,8 +174,8 @@
 			isa = PBXGroup;
 			children = (
 				4631C5E22BA6F16900567C33 /* UI */,
-				4631C5E02BA6EBBB00567C33 /* Services */,
-				4631C5D32BA6E5F500567C33 /* Features */,
+				4631C5E02BA6EBBB00567C33 /* Service */,
+				4631C5D32BA6E5F500567C33 /* Feature */,
 				46DFB8122BA221E40032140D /* Search_GitHub_UserApp.swift */,
 				46DFB82A2BA22AC60032140D /* ContentView.swift */,
 				46DFB8162BA221E50032140D /* Assets.xcassets */,
@@ -193,6 +195,7 @@
 		46DFB8202BA2228A0032140D /* NetworkService */ = {
 			isa = PBXGroup;
 			children = (
+				46DFB8222BA222AD0032140D /* NetworkService.swift */,
 				46DFB8282BA2231B0032140D /* Errors.swift */,
 			);
 			path = NetworkService;
@@ -233,7 +236,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 46DFB80A2BA221E40032140D /* Build configuration list for PBXProject "SearchGitHubUser" */;
+			buildConfigurationList = 46DFB80A2BA221E40032140D /* Build configuration list for PBXProject "Search GitHub User" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -274,9 +277,10 @@
 				46DFB8292BA2231B0032140D /* Errors.swift in Sources */,
 				46DFB82B2BA22AC60032140D /* ContentView.swift in Sources */,
 				46DFB8132BA221E40032140D /* Search_GitHub_UserApp.swift in Sources */,
-				4631C5CC2BA4F01D00567C33 /* SearchGHUserView.swift in Sources */,
 				4631C5D92BA6EA8200567C33 /* GHUserModel.swift in Sources */,
+				46930DA42BB3421D005FEC89 /* Documentation.docc in Sources */,
 				4631C5E42BA6F66900567C33 /* SearchAccountView.swift in Sources */,
+				46233BB92BAC978A00AE458C /* SearchGHUserView.swift in Sources */,
 				46DFB8232BA222AD0032140D /* NetworkService.swift in Sources */,
 				4631C5E62BA6F87D00567C33 /* SearchFieldView.swift in Sources */,
 			);
@@ -469,7 +473,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		46DFB80A2BA221E40032140D /* Build configuration list for PBXProject "SearchGitHubUser" */ = {
+		46DFB80A2BA221E40032140D /* Build configuration list for PBXProject "Search GitHub User" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				46DFB81B2BA221E50032140D /* Debug */,
