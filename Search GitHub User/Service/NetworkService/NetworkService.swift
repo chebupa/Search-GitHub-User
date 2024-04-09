@@ -7,43 +7,36 @@
 
 import Foundation
 
-private protocol NetworkServiceProtocol {
-	var decoder: JSONDecoder { get }
-	
-	func createURL(user: String) throws -> URL
-	func getUser(_ user: String) async throws -> GHUser
-}
-
-final class NetworkService: NetworkServiceProtocol {
+public final class NetworkService {
 	
 	// singleton
 	static let shared = NetworkService(); private init() {}
 	
 	// inits
-	fileprivate let decoder = JSONDecoder()
+	private let decoder = JSONDecoder()
 	
-	// API methods
-	func createURL(user: String) throws -> URL {
+	// Helpers
+	private func createURL(tunnel: String = "https://",
+						   server: String = "api.github.com/",
+						   endpoint: String = "users/",
+						   params: String) throws -> URL {
 		
-		let tunnel = "https://"
-		let server = "api.github.com/"
-		let endpoint = "users/"
-		let getParams = user
-		
-		guard let url = URL(string: tunnel + server + endpoint + getParams) else { throw GHError.invalidURL }
+		guard let url = URL(string: tunnel + server + endpoint + params) else {
+			throw NetworkServiceError.invalidURL
+		}
 		
 		return url
-		
 	}
 	
+	// API methods
 	func getUser(_ user: String) async throws -> GHUser {
 		
 		decoder.keyDecodingStrategy = .convertFromSnakeCase
 		
-		let (data, response) = try await URLSession.shared.data(from: createURL(user: user))
+		let (data, response) = try await URLSession.shared.data(from: createURL(params: user))
 		
 		guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-			throw NetworkServiceError.responseFailed
+			throw NetworkServiceError.invalidResponse
 		}
 		
 		guard let result = try? decoder.decode(GHUser.self, from: data) else {
@@ -51,9 +44,5 @@ final class NetworkService: NetworkServiceProtocol {
 		}
 		
 		return result
-		
 	}
-	
-//	func get() async throws -> {}
-	
 }

@@ -12,6 +12,7 @@ struct SearchGHUserView: View {
 	@State private var viewModel = SearchGHUserViewModel()
 	
 	var body: some View {
+		
 		NavigationStack {
 			ScrollView {
 				SearchAccountView(user: $viewModel.user,
@@ -19,24 +20,24 @@ struct SearchGHUserView: View {
 			}
 			.navigationTitle("Search")
 			.searchable(text: $viewModel.searchedUser)
-			.onSubmit(of: .search) {
-				Task {
-					do {
-						viewModel.searchedUser = try await viewModel.searchUser().login
-					} catch {
-						viewModel.alertIsShown = true
-					}
-				}
-			}
 			.sheet(isPresented: $viewModel.webIsPresented) {
 				WebView(url: viewModel.webViewURL)
 					.presentationDragIndicator(.visible)
 			}
-			.alert("Such user doesn't exist",
-				   isPresented: $viewModel.alertIsShown) {
-				Button("OK", role: .cancel) { }
+			.alert("Such username doesn't exist",
+				   isPresented: $viewModel.alertIsShown) {}
+			.onSubmit(of: .search) {
+				Task {
+					do {
+						try await viewModel.searchUser()
+					} catch {
+						viewModel.alertIsShown = true
+						print(error)
+					}
+				}
 			}
 		}
+		
 	}
 }
 

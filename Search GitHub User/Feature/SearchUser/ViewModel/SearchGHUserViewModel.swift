@@ -8,11 +8,7 @@
 import Foundation
 import Observation
 
-public enum SearchGHUserErrors: Error {
-	case NetworkError
-}
-
-internal protocol SearchGHUserViewModelProtocol {
+protocol SearchGHUserViewModelProtocol {
 	var user: GHUser? { get set }
 	var searchedUser: String { get set }
 	var webViewURL: URL { get set }
@@ -23,7 +19,7 @@ internal protocol SearchGHUserViewModelProtocol {
 }
 
 @Observable
-internal final class SearchGHUserViewModel: SearchGHUserViewModelProtocol {
+final class SearchGHUserViewModel: SearchGHUserViewModelProtocol {
 	
 	var user: GHUser?
 	var searchedUser: String = ""
@@ -37,6 +33,7 @@ internal final class SearchGHUserViewModel: SearchGHUserViewModelProtocol {
 		self.alertIsShown = alertIsShown
 	}
 	
+	@discardableResult
 	func searchUser() async throws -> GHUser {
 		
 		webViewURL.deleteLastPathComponent()
@@ -46,6 +43,7 @@ internal final class SearchGHUserViewModel: SearchGHUserViewModelProtocol {
 		}
 		
 		user = result
+		searchedUser = result.login
 		webViewURL.append(path: result.login)
 		
 		return result

@@ -15,6 +15,8 @@
 		4631C5E42BA6F66900567C33 /* SearchAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4631C5E32BA6F66900567C33 /* SearchAccountView.swift */; };
 		4631C5E62BA6F87D00567C33 /* SearchFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4631C5E52BA6F87D00567C33 /* SearchFieldView.swift */; };
 		46930DA42BB3421D005FEC89 /* Documentation.docc in Sources */ = {isa = PBXBuildFile; fileRef = 46930DA32BB3421D005FEC89 /* Documentation.docc */; };
+		46930DA62BB34E88005FEC89 /* SearchGHUserErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46930DA52BB34E88005FEC89 /* SearchGHUserErrors.swift */; };
+		46D046B72BC2B38A00706AFD /* NetworkServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D046B62BC2B38A00706AFD /* NetworkServiceTest.swift */; };
 		46DFB8132BA221E40032140D /* Search_GitHub_UserApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DFB8122BA221E40032140D /* Search_GitHub_UserApp.swift */; };
 		46DFB8172BA221E50032140D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46DFB8162BA221E50032140D /* Assets.xcassets */; };
 		46DFB81A2BA221E50032140D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46DFB8192BA221E50032140D /* Preview Assets.xcassets */; };
@@ -32,6 +34,9 @@
 		4631C5E32BA6F66900567C33 /* SearchAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAccountView.swift; sourceTree = "<group>"; };
 		4631C5E52BA6F87D00567C33 /* SearchFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFieldView.swift; sourceTree = "<group>"; };
 		46930DA32BB3421D005FEC89 /* Documentation.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Documentation.docc; sourceTree = "<group>"; };
+		46930DA52BB34E88005FEC89 /* SearchGHUserErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchGHUserErrors.swift; sourceTree = "<group>"; };
+		46B5AC122BC16B4D0067D80F /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		46D046B62BC2B38A00706AFD /* NetworkServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceTest.swift; sourceTree = "<group>"; };
 		46DFB80F2BA221E40032140D /* Search GitHub User.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Search GitHub User.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46DFB8122BA221E40032140D /* Search_GitHub_UserApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search_GitHub_UserApp.swift; sourceTree = "<group>"; };
 		46DFB8162BA221E50032140D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -92,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				4631C5DA2BA6EABB00567C33 /* SearchGHUserViewModel.swift */,
+				46930DA52BB34E88005FEC89 /* SearchGHUserErrors.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -132,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				46DFB8202BA2228A0032140D /* NetworkService */,
+				4644B6EC2BBC81A800081E6C /* NetworkServiceTest */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -153,9 +160,18 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		4644B6EC2BBC81A800081E6C /* NetworkServiceTest */ = {
+			isa = PBXGroup;
+			children = (
+				46D046B62BC2B38A00706AFD /* NetworkServiceTest.swift */,
+			);
+			path = NetworkServiceTest;
+			sourceTree = "<group>";
+		};
 		46DFB8062BA221E40032140D = {
 			isa = PBXGroup;
 			children = (
+				46B5AC122BC16B4D0067D80F /* MyPlayground.playground */,
 				46930DA32BB3421D005FEC89 /* Documentation.docc */,
 				46DFB8112BA221E40032140D /* Search GitHub User */,
 				46DFB8102BA221E40032140D /* Products */,
@@ -277,7 +293,9 @@
 				46DFB8292BA2231B0032140D /* Errors.swift in Sources */,
 				46DFB82B2BA22AC60032140D /* ContentView.swift in Sources */,
 				46DFB8132BA221E40032140D /* Search_GitHub_UserApp.swift in Sources */,
+				46D046B72BC2B38A00706AFD /* NetworkServiceTest.swift in Sources */,
 				4631C5D92BA6EA8200567C33 /* GHUserModel.swift in Sources */,
+				46930DA62BB34E88005FEC89 /* SearchGHUserErrors.swift in Sources */,
 				46930DA42BB3421D005FEC89 /* Documentation.docc in Sources */,
 				4631C5E42BA6F66900567C33 /* SearchAccountView.swift in Sources */,
 				46233BB92BAC978A00AE458C /* SearchGHUserView.swift in Sources */,

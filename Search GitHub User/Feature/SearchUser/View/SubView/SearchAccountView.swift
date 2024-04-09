@@ -15,7 +15,6 @@ struct SearchAccountView: View {
 	@State private var feedback: Bool = false
 	
 	var body: some View {
-		
 		if user != nil {
 			VStack {
 				AsyncImage(url: user?.avatarUrl) { image in
@@ -55,9 +54,7 @@ struct SearchAccountView: View {
 			.transition(.asymmetric(insertion: .scale, removal: .opacity))
 			.sensoryFeedback(.impact(flexibility: .soft),
 							 trigger: feedback)
-		}
-		
-		else {
+		} else {
 			Text("No user was searched")
 		}
 	}

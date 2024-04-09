@@ -7,11 +7,8 @@
 
 import Foundation
 
-enum GHError: Error {
-	case invalidURL
-}
-
 enum NetworkServiceError: Error {
-	case responseFailed
+	case invalidURL
+	case invalidResponse
 	case decodingFailed
 }
