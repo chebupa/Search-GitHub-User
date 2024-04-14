@@ -8,18 +8,8 @@
 import Foundation
 import Observation
 
-protocol SearchGHUserViewModelProtocol {
-	var user: GHUser? { get set }
-	var searchedUser: String { get set }
-	var webViewURL: URL { get set }
-	var webIsPresented: Bool { get set }
-	var alertIsShown: Bool { get set }
-	
-	func searchUser() async throws -> GHUser
-}
-
 @Observable
-final class SearchGHUserViewModel: SearchGHUserViewModelProtocol {
+final class SearchGHUserViewModel {
 	
 	var user: GHUser?
 	var searchedUser: String = ""
@@ -33,8 +23,7 @@ final class SearchGHUserViewModel: SearchGHUserViewModelProtocol {
 		self.alertIsShown = alertIsShown
 	}
 	
-	@discardableResult
-	func searchUser() async throws -> GHUser {
+	func searchUser() async throws -> Void {
 		
 		webViewURL.deleteLastPathComponent()
 		
@@ -45,7 +34,5 @@ final class SearchGHUserViewModel: SearchGHUserViewModelProtocol {
 		user = result
 		searchedUser = result.login
 		webViewURL.append(path: result.login)
-		
-		return result
 	}
 }
